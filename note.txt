@@ -1,0 +1,40 @@
+除法运算（/）返回浮点数。
+8 / 4 = 2.0 
+用 // 运算符执行 floor division 的结果是整数（忽略小数）；
+8 // 4 = 2
+计算余数用 % 
+8 % 4 = 0
+
+
+import ListNode
+TypeError: 'module' object is not callable
+改成
+from ListNode import ListNode
+
+
+ord() 函数是 
+chr() 函数（对于8位的ASCII字符串）或 
+unichr() 函数（对于Unicode对象）的配对函数，
+它以一个字符（长度为1的字符串）作为参数，返回对应的ASCII数值，或者 Unicode 数值，
+如果所给的Unicode字符超出了你的Python定义范围，则会引发一个 TypeError 的异常。
+
+set() 查找是O(1)
+
+
+counts[notInDicKey] += 1
+会报KeyError: 'notInDicKey'， 因为没有初始值
+setdefault没值则赋一个默认值，然后返回对应值（刚设置的默认值或原来值）
+
+strings = ('puppy', 'kitten', 'puppy', 'puppy',
+           'weasel', 'puppy', 'kitten', 'puppy')
+counts = {}
+for kw in strings:
+    counts[kw] = counts.setdefault(kw, 0) + 1
+
+from collections import defaultdict
+dd = defaultdict(list)
+
+defaultdict类的初始化函数接受一个类型作为参数，当所访问的键不存在的时候，可以实例化一个值作为默认值：
+>>> dd['foo'] 则返回空数组 []
+
+
