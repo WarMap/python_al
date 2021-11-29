@@ -1,6 +1,20 @@
 from collections import defaultdict, OrderedDict
 
 
+# 滑动窗口
+# 1. start/end 窗口的起始位置
+# 2. lookup有默认值字典  
+#     1. 0/1 有无    （最长不重复子串，只需知道包不包含；
+#     2. -1/0/1 有多少  （覆盖目标串，包含几个了
+#     3. 有时可简化， 比如数字和，不需要知道组成这个和的元素分别是什么，只记录一个和就可以
+# 3. 目标结果 （当前遍历到的元素产生的满足条件目标结果，不一定是最终结果
+# 4. 辅助的判断条件
+#     1. 不重复子串，counter（有没有重复
+#     2. 最小和子串，cur_val (当前子串和
+#     3. 最短覆盖子串， counter（当前多少字符没覆盖
+
+
+
 class Solution:
 
     def longestSubString(self, s: str) -> int:
@@ -25,7 +39,7 @@ class Solution:
         if not nums: return 0
         start = end = curr = 0
         cur_val = 0
-        min_val = 100000
+        min_val = float('inf')
         while end < len(nums):
             #  < target , 右边一直前进
             curr += nums[end]
