@@ -38,3 +38,4 @@ defaultdict类的初始化函数接受一个类型作为参数，当所访问的
 >>> dd['foo'] 则返回空数组 []
 
 
+float('inf') 正无穷大 float('-inf')负无穷大
